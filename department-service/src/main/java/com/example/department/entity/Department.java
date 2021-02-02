@@ -1,8 +1,9 @@
 /**
  * 
  */
-package com.example.demo.employee.entity;
+package com.example.department.entity;
 
+import java.time.LocalDate;
 import java.util.UUID;
 
 import javax.persistence.Column;
@@ -15,23 +16,23 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @author Sagar Rout
+ * @author sagar
  *
  */
 @Entity
-@Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Employee {
+@NoArgsConstructor
+@Data
+public class Department {
 
 	@Id
 	@GeneratedValue
-	@Column(name="employee_id")
+	@Column(name= "department_id")
 	private UUID id;
 	
-	@Column(nullable = false)
+	@Column(nullable=false)
 	private String name;
 	
 	@Column(nullable=false)
-	private String mobileNo;
+	private LocalDate since;
 }
