@@ -1,4 +1,4 @@
-# Demo Spring Microservices
+# Demo Spring Micro-services
 
 ## Components of microservices : 
 
@@ -9,8 +9,21 @@
 
 Both services are registered in the eureka service. All calls are going through api gateway. Employee Service calls department service through feign client.
 
-## Logging
+## Logging : 
+- JSON logging - To ship logs directly to Elasticsearch without parsing. (https://github.com/logstash/logstash-logback-encoder)
+- Add [logback.xml](/api-gateway/src/main/resources/logback.xml)
 
-- Logstash
-- ELK Stack - I prefer Elasticsearch, beats and Kibana
+```java
+<dependency>
+    <groupId>net.logstash.logback</groupId>
+    <artifactId>logstash-logback-encoder</artifactId>
+    <version>6.6</version>
+</dependency>
 
+<dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>1.2.3</version>
+</dependency>
+
+```
